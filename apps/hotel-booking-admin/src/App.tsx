@@ -27,6 +27,8 @@ import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
+import restDataProvider from "./data-provider/restDataProvider";
+
 const App = (): React.ReactElement => {
   const [dataProvider, setDataProvider] = useState<DataProvider | null>(null);
   useEffect(() => {
@@ -41,11 +43,14 @@ const App = (): React.ReactElement => {
   if (!dataProvider) {
     return <div>Loading</div>;
   }
+
+  const provider = restDataProvider;
+
   return (
     <div className="App">
       <Admin
         title={"HotelBooking"}
-        dataProvider={dataProvider}
+        dataProvider={provider}
         authProvider={jwtAuthProvider}
         theme={theme}
         dashboard={Dashboard}
