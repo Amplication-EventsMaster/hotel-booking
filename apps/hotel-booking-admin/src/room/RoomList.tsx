@@ -12,14 +12,8 @@ import { HOTEL_TITLE_FIELD } from "../hotel/HotelTitle";
 
 export const RoomList = (props: ListProps): React.ReactElement => {
   return (
-    <List
-      {...props}
-      bulkActionButtons={false}
-      title={"Rooms"}
-      perPage={50}
-      pagination={<Pagination />}
-    >
-      <Datagrid rowClick="show">
+    <List {...props} title={"Rooms"} perPage={50} pagination={<Pagination />}>
+      <Datagrid rowClick="show" bulkActionButtons={false}>
         <DateField source="createdAt" label="Created At" />
         <ReferenceField label="hotel" source="hotel.id" reference="Hotel">
           <TextField source={HOTEL_TITLE_FIELD} />

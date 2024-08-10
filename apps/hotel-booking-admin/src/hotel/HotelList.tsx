@@ -4,14 +4,8 @@ import Pagination from "../Components/Pagination";
 
 export const HotelList = (props: ListProps): React.ReactElement => {
   return (
-    <List
-      {...props}
-      bulkActionButtons={false}
-      title={"Hotels"}
-      perPage={50}
-      pagination={<Pagination />}
-    >
-      <Datagrid rowClick="show">
+    <List {...props} title={"Hotels"} perPage={50} pagination={<Pagination />}>
+      <Datagrid rowClick="show" bulkActionButtons={false}>
         <TextField label="address" source="address" />
         <DateField source="createdAt" label="Created At" />
         <TextField label="ID" source="id" />

@@ -30,7 +30,7 @@ export const CustomerShow = (props: ShowProps): React.ReactElement => {
           target="customerId"
           label="Bookings"
         >
-          <Datagrid rowClick="show">
+          <Datagrid rowClick="show" bulkActionButtons={false}>
             <TextField label="checkInDate" source="checkInDate" />
             <TextField label="checkOutDate" source="checkOutDate" />
             <DateField source="createdAt" label="Created At" />

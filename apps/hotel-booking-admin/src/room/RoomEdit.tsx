@@ -22,12 +22,15 @@ export const RoomEdit = (props: EditProps): React.ReactElement => {
         <ReferenceArrayInput
           source="bookings"
           reference="Booking"
-          parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
-          format={(value: any) => value && value.map((v: any) => v.id)}
+          perPage={200}
         >
-          <SelectArrayInput optionText={BookingTitle} />
+          <SelectArrayInput
+            optionText={BookingTitle}
+            parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
+            format={(value: any) => value && value.map((v: any) => v.id)}
+          />
         </ReferenceArrayInput>
-        <ReferenceInput source="hotel.id" reference="Hotel" label="hotel">
+        <ReferenceInput source="hotel.id" reference="Hotel">
           <SelectInput optionText={HotelTitle} />
         </ReferenceInput>
         <NumberInput label="price" source="price" />

@@ -16,15 +16,11 @@ export const BookingEdit = (props: EditProps): React.ReactElement => {
       <SimpleForm>
         <DateTimeInput label="checkInDate" source="checkInDate" />
         <DateTimeInput label="checkOutDate" source="checkOutDate" />
-        <ReferenceInput
-          source="customer.id"
-          reference="Customer"
-          label="customer"
-        >
-          <SelectInput optionText={CustomerTitle} />
+        <ReferenceInput source="customer.id" reference="Customer">
+          <SelectInput optionText={CustomerTitle} label="customer" />
         </ReferenceInput>
-        <ReferenceInput source="room.id" reference="Room" label="room">
-          <SelectInput optionText={RoomTitle} />
+        <ReferenceInput source="room.id" reference="Room">
+          <SelectInput optionText={RoomTitle} label="room" />
         </ReferenceInput>
       </SimpleForm>
     </Edit>
