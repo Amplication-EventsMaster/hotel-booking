@@ -19,14 +19,14 @@ export const HotelCreate = (props: CreateProps): React.ReactElement => {
         <TextInput label="address" source="address" />
         <TextInput label="name" source="name" />
         <NumberInput label="rating" source="rating" />
-        <ReferenceArrayInput
+        {/* <ReferenceArrayInput
           source="rooms"
           reference="Room"
-          parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
-          format={(value: any) => value && value.map((v: any) => v.id)}
+          // parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
+          // format={(value: any) => value && value.map((v: any) => v.id)}
         >
           <SelectArrayInput optionText={RoomTitle} />
-        </ReferenceArrayInput>
+        </ReferenceArrayInput> */}
       </SimpleForm>
     </Create>
   );

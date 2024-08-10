@@ -19,17 +19,17 @@ export const RoomEdit = (props: EditProps): React.ReactElement => {
   return (
     <Edit {...props}>
       <SimpleForm>
-        <ReferenceArrayInput
+        {/* <ReferenceArrayInput
           source="bookings"
           reference="Booking"
           perPage={200}
         >
           <SelectArrayInput
             optionText={BookingTitle}
-            parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
-            format={(value: any) => value && value.map((v: any) => v.id)}
+            // parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
+            // format={(value: any) => value && value.map((v: any) => v.id)}
           />
-        </ReferenceArrayInput>
+        </ReferenceArrayInput> */}
         <ReferenceInput source="hotel.id" reference="Hotel">
           <SelectInput optionText={HotelTitle} />
         </ReferenceInput>
